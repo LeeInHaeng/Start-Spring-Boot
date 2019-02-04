@@ -78,4 +78,4 @@ public Page<Board> FindByBnoGreaterThanOrderByBnoDesc(Long bno, Pageable paging)
 	"FROM Board b WHERE b.content LIKE %:content% AND b.bno>0 ORDER BY b.bno DESC")
 public Page<Object[]> findByContentPage(@Param("content") String content, Pageable paging);
 ```
-- 전체 컬럼을 추출하는 경우(select b)에는 "Page<Board>" / 필요한 컬럼만 추출하는 경우에는 "Page<Object[]>"
+- 전체 컬럼을 추출하는 경우(select b)에는 ```Page<Board>```, 필요한 컬럼만 추출하는 경우에는 ```Page<Object[]>```
