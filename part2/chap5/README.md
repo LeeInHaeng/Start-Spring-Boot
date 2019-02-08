@@ -159,3 +159,26 @@ public class SampleController {
 // http://localhost:8080/sample1?p1=aaa&p2=bbb
 <li><a th:href="@{/sample1(p1='aaa', p2='bbb')}">sample1</a></li>
 ```
+
+# Thymeleaf layout dialect와 HTML5 Boilerplate 사용
+- Thymeleaf layout dialect 라이브러리 다운
+```
+// pom.xml
+		<!-- https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect -->
+		<dependency>
+		    <groupId>nz.net.ultraq.thymeleaf</groupId>
+		    <artifactId>thymeleaf-layout-dialect</artifactId>
+		    <version>2.3.0</version>
+		</dependency>
+```
+- Boilerplate 다운로드 ---> 압축 해제 ---> 프로젝트 내의 static 폴더에 복사
+  - https://html5boilerplate.com/
+- 프로젝트 내에 templates 폴더 안에 layout 폴더 생성 후 layout1.html 파일 작성
+- 해당 layout 사용 (서버 재시작)
+```
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/layout/layout1}">
+    ...
+</html>
+```
