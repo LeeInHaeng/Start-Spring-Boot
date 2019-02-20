@@ -326,7 +326,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 - 기존에는 Security 설정 파일에서 configure() 에 접근 제어를 설정하는 방식이었다.
 - 스프링 시큐리티는 Secured라는 어노테이션을 통해 접근을 제한하는 방식을 지원한다.
 ```
-	@Secured({"ROLE_ADMIN"})
+	@Secured(value={"ROLE_ADMIN"})
 	@RequestMapping("/adminSecret")
 	public void forAdminSecret() {
 		
